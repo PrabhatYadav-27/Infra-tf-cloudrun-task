@@ -17,38 +17,38 @@ steps:
 
   # Initialize Terraform (install providers and modules)
   - name: 'hashicorp/terraform:latest'
-    dir: task1/
     entrypoint: 'sh'
     args:
       - '-c'
       - |
+        cd task1/
         terraform init
 
   # Validate Terraform configuration
   - name: 'hashicorp/terraform:latest'
-    dir: task1/
     entrypoint: 'sh'
     args:
       - '-c'
       - |
+        cd task1/
         terraform validate
 
   # Plan Terraform changes
   - name: 'hashicorp/terraform:latest'
-    dir: task1/
     entrypoint: 'sh'
     args:
       - '-c'
       - |
+        cd task1/
         terraform plan -input=false -out=tfplan
 
   # # Apply Terraform changes
   # - name: 'hashicorp/terraform:latest'
-  #   dir: task1/
   #   entrypoint: 'sh'
   #   args:
   #     - '-c'
   #     - |
+        # cd task1/
   #       terraform apply -auto-approve
 
 
