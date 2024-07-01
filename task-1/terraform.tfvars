@@ -1,6 +1,0 @@
-project_id      = "cloud-run-service-task"
-region          = "asia-south1"
-service_name    = "my-first-cloud-run-svc"
-image_name      = "aviato-httpd"
-image_tag       = "latest"
-repository_name = "uat-prabhat-repo"
