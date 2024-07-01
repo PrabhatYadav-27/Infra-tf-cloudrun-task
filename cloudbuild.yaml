@@ -23,7 +23,7 @@ steps:
       - |
         cd task-1/
         terraform init
-
+ 
   # Validate Terraform configuration
   - name: 'hashicorp/terraform:latest'
     entrypoint: 'sh'
