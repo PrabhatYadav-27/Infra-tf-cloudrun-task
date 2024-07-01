@@ -22,14 +22,14 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/cloud-run-service-task/aviato-httpd:$COMMIT_SHA'
+      - 'gcr.io/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:$COMMIT_SHA'
       - '.'
 
   # Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/cloud-run-service-task/aviato-httpd:$COMMIT_SHA'
+      - 'gcr.io/cloud-run-service-task//uat-prabhat-repo/aviato-httpd:$COMMIT_SHA'
 
 # Specify the Cloud Logging configuration
 logsBucket: 'gs://cloud-test-task'
