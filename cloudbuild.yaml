@@ -42,14 +42,14 @@ steps:
         cd task-1/
         terraform plan -input=false -out=tfplan
 
-  # # Apply Terraform changes
-  # - name: 'hashicorp/terraform:latest'
-  #   entrypoint: 'sh'
-  #   args:
-  #     - '-c'
-  #     - |
-        # cd task-1/
-  #       terraform apply -auto-approve
+  # Apply Terraform changes
+  - name: 'hashicorp/terraform:latest'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd task-1/
+        terraform apply -auto-approve
 
 
 # Specify the Cloud Logging configuration
