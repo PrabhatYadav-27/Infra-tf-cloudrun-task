@@ -11,6 +11,6 @@ steps:
 #   # Specify the Docker image to push (optional)
 #   - 'gcr.io/$cloud-run-service-task/aviato-httpd:$COMMIT_SHA'
 
-logBucket: 'gs://cloud-test-task'
+logsBucket: 'gs://cloud-test-task'
 options:
     logging: GCS_ONLY
