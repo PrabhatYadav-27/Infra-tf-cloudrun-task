@@ -1,35 +1,17 @@
-# steps:
-#   # Build the Docker image
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args: ['build', '-t', 'gcr.io/cloud-run-service-task/aviato-httpd:$COMMIT_SHA', '.']
-    
-#   # Push the Docker image to Google Container Registry
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args: ['push', 'gcr.io/cloud-run-service-task/aviato-httpd:$COMMIT_SHA']
-
-# # images:
-# #   # Specify the Docker image to push (optional)
-# #   - 'gcr.io/cloud-run-service-task/aviato-httpd:$COMMIT_SHA'
-
-# logsBucket: 'gs://cloud-test-task'
-# options:
-#     logging: GCS_ONLY
-
-
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
       - '-t'
-      - 'asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest'
+      - 'asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VERSION}'
       - '.'
 
   # Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest'
+      - 'asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VERSION}'
 
 # Specify the Cloud Logging configuration
 logsBucket: 'gs://cloud-test-task'
