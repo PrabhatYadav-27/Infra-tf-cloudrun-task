@@ -22,14 +22,14 @@ steps:
     args:
       - 'build'
       - '-t'
-      - ''asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest''
+      - 'asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest'
       - '.'
 
   # Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - ''asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest''
+      - 'asia-south1-docker.pkg.dev/cloud-run-service-task/uat-prabhat-repo/aviato-httpd:latest'
 
 # Specify the Cloud Logging configuration
 logsBucket: 'gs://cloud-test-task'
