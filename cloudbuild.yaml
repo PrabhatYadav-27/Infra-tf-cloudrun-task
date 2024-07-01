@@ -21,7 +21,7 @@ steps:
     args:
       - '-c'
       - |
-        cd task1/
+        cd task-1/
         terraform init
 
   # Validate Terraform configuration
@@ -30,7 +30,7 @@ steps:
     args:
       - '-c'
       - |
-        cd task1/
+        cd task-1/
         terraform validate
 
   # Plan Terraform changes
@@ -39,7 +39,7 @@ steps:
     args:
       - '-c'
       - |
-        cd task1/
+        cd task-1/
         terraform plan -input=false -out=tfplan
 
   # # Apply Terraform changes
@@ -48,7 +48,7 @@ steps:
   #   args:
   #     - '-c'
   #     - |
-        # cd task1/
+        # cd task-1/
   #       terraform apply -auto-approve
 
 
