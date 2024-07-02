@@ -5,7 +5,7 @@ region     = "asia-south1"
 service_name    = "first-cloud-run"
 image           = "httpd"
 image_tag       = "latest"
-repository_name = "uat-prabhat-repo "
+repository_name = "uat-prabhat-repo"
 
 #VPC
 vpc_name = "my-vpc"
