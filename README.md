@@ -137,12 +137,12 @@ image        = "asia-south1-docker.pkg.dev/ENTER_PROJECT_ID/repository_name/imag
 
 ```
 
-`name`: 'gcr.io/cloud-builders/docker': Specifies the Docker builder image provided by Google Cloud.
-`args`: Arguments to pass to the Docker builder.
-`build`: The Docker build command.
-`-t`: Specifies the tag for the Docker image.
+- `name`: 'gcr.io/cloud-builders/docker': Specifies the Docker builder image provided by Google Cloud.
+- `args`: Arguments to pass to the Docker builder.
+- `build`: The Docker build command.
+- `-t`: Specifies the tag for the Docker image.
 asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VERSION}: The fully qualified name for the Docker image, including region, project ID, repository name, image name, and version.
-`.`: Indicates that the Docker build context is the current directory.
+- `.`: Indicates that the Docker build context is the current directory.
 
 # Push the Docker Image to Google Container Registry
 ```
@@ -152,9 +152,9 @@ asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VE
     - 'asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VERSION}'
 
 ```
-`name`: 'gcr.io/cloud-builders/docker': Specifies the Docker builder image.
-`args`: Arguments to pass to the Docker builder.
-`push`: The Docker push command.
+- `name`: 'gcr.io/cloud-builders/docker': Specifies the Docker builder image.
+- `args`: Arguments to pass to the Docker builder.
+- `push`: The Docker push command.
 asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VERSION}: The fully qualified name of the Docker image to push to the registry.
 
 ## Deploy Terraform Code
@@ -171,12 +171,12 @@ asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VE
 
 ```
 
-`name`: 'hashicorp/terraform:latest': Specifies the Terraform builder image.
-`entrypoint`: 'sh': Overrides the default entrypoint to use a shell.
-`args`: Arguments to pass to the shell.
-`-c`: Indicates that a command string follows.
-`cd task-1/`: Changes the directory to task-1.
-`terraform init`: Initializes Terraform, downloading providers and modules.
+- `name`: 'hashicorp/terraform:latest': Specifies the Terraform builder image.
+- `entrypoint`: 'sh': Overrides the default entrypoint to use a shell.
+- `args`: Arguments to pass to the shell.
+- `-c`: Indicates that a command string follows.
+- `cd task-1/`: Changes the directory to task-1.
+- `terraform init`: Initializes Terraform, downloading providers and modules.
 
 # Validate Terraform Configuration
 ```
@@ -190,7 +190,7 @@ asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VE
 
 ```
 
-`terraform validate`: Validates the Terraform configuration files.
+- `terraform validate`: Validates the Terraform configuration files.
 
 # Plan Terraform Changes
 ```
@@ -204,7 +204,7 @@ asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VE
 
 ```
 
-`terraform plan` -input=false -out=tfplan: Generates an execution plan and saves it to tfplan.
+- `terraform plan` -input=false -out=tfplan: Generates an execution plan and saves it to tfplan.
 # Apply Terraform Changes
 ```
 - name: 'hashicorp/terraform:latest'
@@ -217,12 +217,12 @@ asia-south1-docker.pkg.dev/${_PROJECT_ID}/${_GCR_REPO_NAME}/${_IMAGE_NAME}:${_VE
 
 ```
 
-`name`: 'hashicorp/terraform:latest': Specifies the Terraform builder image.
-`entrypoint`: 'sh': Uses a shell as the entrypoint.
-`args`: Arguments to pass to the shell.
-`-c`: Indicates that a command string follows.
-`cd task-1/`: Changes the directory to task-1.
-`terraform ${_TF_ACTION} -auto-approve`: Applies the Terraform plan (apply or destroy based on the value of _TF_ACTION) without requiring interactive approval.
+- `name`: 'hashicorp/terraform:latest': Specifies the Terraform builder image.
+- `entrypoint`: 'sh': Uses a shell as the entrypoint.
+- `args`: Arguments to pass to the shell.
+- `-c`: Indicates that a command string follows.
+- `cd task-1/`: Changes the directory to task-1.
+- `terraform ${_TF_ACTION} -auto-approve`: Applies the Terraform plan (apply or destroy based on the value of _TF_ACTION) without requiring interactive approval.
 
  # Logging Configuration
  ```
@@ -232,9 +232,9 @@ options:
 
 ```
 
-`logsBucket`: 'gs://cloud-test-task': Specifies a Google Cloud Storage bucket for storing logs.
-`options`: Additional options for the build.
-`logging`: GCS_ONLY: Configures the build to only use Google Cloud Storage for logging.
+- `logsBucket`: 'gs://cloud-test-task': Specifies a Google Cloud Storage bucket for storing logs.
+- `options`: Additional options for the build.
+- `logging`: GCS_ONLY: Configures the build to only use Google Cloud Storage for logging.
 
 
 ##  The above configuration ensures that the Docker image is built and pushed to the registry, and the Terraform configuration is applied correctly, with logs stored in a specified Google Cloud Storage bucket.
