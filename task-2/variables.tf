@@ -15,6 +15,10 @@ variable "region" {
     condition     = var.region != null
     error_message = "Region must be specified"
   }
+  validation {
+    condition     = length(regexall("_", var.repository_name)) == 0
+    error_message = "Repository name must not include underscores"
+  }
 }
 
 variable "service_name" {
