@@ -2,7 +2,7 @@ project_id = "cloud-run-service-task"
 region     = "asia-south1"
 
 # Cloud Run
-service_name    = "first_cloud_run"
+service_name    = "first-cloud-run"
 image           = "httpd"
 image_tag       = "latest"
 repository_name = "uat-prabhat-repo"
