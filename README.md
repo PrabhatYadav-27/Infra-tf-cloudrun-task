@@ -215,7 +215,44 @@ options:
 
 ```
 
+
+
 - `logsBucket`: 'gs://cloud-test-task': Specifies a Google Cloud Storage bucket for storing logs.
 - `options`: Additional options for the build.
 - `logging`: GCS_ONLY: Configures the build to only use Google Cloud Storage for logging.
+
+
+
+## Commands to run  Manually
+## Terraform initialization
+
+Run ` terraform init`:
+-Use the `terraform init` command to initialize Terraform and set up your working directory. This command performs several key tasks:
+
+- Downloads and installs the specified provider plugins (e.g., Google Cloud provider plugin) if they are not already installed.
+- Initializes the backend (if configured) for storing Terraform state.
+- Downloads any modules specified in your configuration files.
+
+- Navigate to Your Terraform Configuration Directory:
+Open your terminal or command prompt and change directory (cd) to the location of your Terraform configuration files.
+
+## Run `terraform plan`:
+Use the `terraform plan` command to generate an execution plan. This command analyzes your configuration and state to determine what actions are necessary to achieve your desired state as defined in your configuration files.
+ 
+ ##   RUN ` terraform Validate` and Confirm:
+Verify that the planned changes align with your expectations and infrastructure requirements. If needed, you can adjust your Terraform configuration files (*.tf) and repeat the terraform plan command until you are satisfied with the plan.
+
+##  `terraform apply` Changes:
+If you are satisfied with the plan and ready to apply the changes to your infrastructure, you can proceed with terraform apply. This will execute the actions specified in the plan.
+
+
+## How to clean the infrastructure one done with
+
+## Run `terraform destroy`:
+Use the `terraform destroy` command to destroy the infrastructure defined in your Terraform configuration files. This will delete all resources that Terraform manages.
+
+
+## Conclusion
+
+The development of a reusable Terraform module for setting up common infrastructure components such as a VPC, subnets, and a Cloud Run service has been successfully accomplished. The module is designed to be highly configurable and adheres to Terraform's best practices, ensuring robustness and ease of use for diverse deployment scenarios.
 
