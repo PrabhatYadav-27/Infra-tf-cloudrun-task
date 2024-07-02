@@ -1,0 +1,14 @@
+## Enable all the required API'S
+-- Compute Engine API
+-- Artifact Registry API
+-- Cloud Run Admin API
+-- Identity and Access Management (IAM) API
+-- Service Usage API
+-- Cloud Build API
+-- Cloud Resource Manager API
+-- Cloud Deploy API
+-- Cloud Storage API
+-- Container Registry API
+-- IAM Service Account Credentials API
+
+-- Intergrate your source code repository for Cloud Build to trigger the events.
