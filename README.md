@@ -117,3 +117,9 @@ region       = "asia-south1"
 service_name = "my-first-cloud-run-svc"
 image        = "asia-south1-docker.pkg.dev/ENTER_PROJECT_ID/repository_name/image"_name: tag_name"
 ```
+
+## For Automating the pipeline we have `cloudbuild.yaml` file
+- where  we have Setup the triggers for automating the pipeline once we can set the triggers according to the event or action which we are taking
+- here  we can set triggers on the ` Code Push Event`  as soon as we happen to push the code in our source code repository our code build will automatically start
+  which will implement the whole code right from building the docker image to implementing and creating the `Infrastructure`.
+- We can set the variables  of build in our `gcp` build console for better security.
